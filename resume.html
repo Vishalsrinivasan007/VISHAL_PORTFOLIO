@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vishal Srinivasan - Executive Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --border-color: #cbd5e1;
+      --accent-color: #4f46e5;
+      --bg-page: #f1f5f9;
+      --bg-paper: #ffffff;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text-dark);
+      background-color: var(--bg-page);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      padding: 30px 16px;
+    }
+
+    /* Print & Action Bar */
+    .action-bar {
+      max-width: 850px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      line-height: 1;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      border: 1px solid var(--accent-color);
+    }
+
+    .btn-primary:hover {
+      background-color: #4338ca;
+    }
+
+    .btn-outline {
+      background-color: #ffffff;
+      color: var(--text-dark);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-outline:hover {
+      background-color: #f8fafc;
+    }
+
+    /* Resume Document Container */
+    .resume-document {
+      max-width: 850px;
+      margin: 0 auto;
+      background-color: var(--bg-paper);
+      padding: 48px 56px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    /* Resume Header */
+    .resume-header {
+      border-bottom: 2px solid var(--text-dark);
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+
+    .candidate-name {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .contact-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .contact-meta a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-meta a:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Sections */
+    .resume-section {
+      margin-bottom: 20px;
+    }
+
+    .section-heading {
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-dark);
+      border-bottom: 1px solid var(--text-dark);
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--text-dark);
+    }
+
+    /* Item Blocks */
+    .resume-item {
+      margin-bottom: 14px;
+    }
+
+    .resume-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .item-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .item-subtitle {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .item-date {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .item-location {
+      font-size: 0.84rem;
+      color: var(--text-light);
+    }
+
+    .item-bullets {
+      margin-top: 5px;
+      padding-left: 20px;
+    }
+
+    .item-bullets li {
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    /* Skills Grid */
+    .skills-category {
+      display: flex;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .skill-cat-title {
+      font-weight: 700;
+      width: 140px;
+      flex-shrink: 0;
+      color: var(--text-dark);
+    }
+
+    .skill-cat-list {
+      color: var(--text-dark);
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding: 0;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .resume-document {
+        padding: 0;
+        box-shadow: none;
+        max-width: 100%;
+        margin: 0;
+      }
+
+      @page {
+        margin: 1.2cm;
+        size: A4;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Screen Navigation Bar -->
+  <div class="action-bar">
+    <a href="index.html" class="btn btn-outline">
+      &larr; Back to Portfolio
+    </a>
+
+    <button onclick="window.print()" class="btn btn-primary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+        <rect x="6" y="14" width="12" height="8"></rect>
+      </svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- ATS-Friendly Executive Resume -->
+  <main class="resume-document">
+    <!-- Header -->
+    <header class="resume-header">
+      <h1 class="candidate-name">Vishal Srinivasan</h1>
+      <div class="contact-meta">
+        <span class="contact-item">
+          <strong>Email:</strong>
+          <a href="mailto:rsvishalgeetha@gmail.com">rsvishalgeetha@gmail.com</a>
+        </span>
+        <span class="contact-item">
+          <strong>Mobile:</strong>
+          <a href="tel:+917708800758">+91 7708800758</a>
+        </span>
+        <span class="contact-item">
+          <strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/in/r-s-vishal-srinivasan-78654326a" target="_blank" rel="noopener noreferrer">linkedin.com/in/r-s-vishal-srinivasan</a>
+        </span>
+        <span class="contact-item">
+          <strong>GitHub:</strong>
+          <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer">github.com/Vishalsrinivasan007</a>
+        </span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="resume-section">
+      <h2 class="section-heading">Professional Summary</h2>
+      <p class="summary-text">
+        Motivated Computer Science graduate with strong fundamentals in MERN stack development and Python. Skilled in building full-stack web applications using modern JavaScript frameworks. Eager to contribute to a dynamic development team and grow in a fast-paced tech environment.
+      </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="resume-section">
+      <h2 class="section-heading">Programming &amp; Technical Skills</h2>
+      <div class="skills-category">
+        <span class="skill-cat-title">Languages:</span>
+        <span class="skill-cat-list">JavaScript (ES6+), Python, HTML5, CSS3</span>
+      </div>
+      <div class="skills-category">
+        <span class="skill-cat-title">Frontend:</span>
+        <span class="skill-cat-list">React.js, Vite, Axios, Responsive Web Design</span>
+      </div>
+      <div class="skills-category">
+        <span class="skill-cat-title">Backend:</span>
+        <span class="skill-cat-list">Node.js, Express.js, REST APIs, JWT Authentication, Bcrypt</span>
+      </div>
+      <div class="skills-category">
+        <span class="skill-cat-title">Database:</span>
+        <span class="skill-cat-list">MongoDB, Mongoose ODM</span>
+      </div>
+      <div class="skills-category">
+        <span class="skill-cat-title">Tools &amp; Platforms:</span>
+        <span class="skill-cat-list">Git, GitHub, VS Code, Postman</span>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="resume-section">
+      <h2 class="section-heading">Key Technical Projects</h2>
+
+      <!-- MERN Auth -->
+      <div class="resume-item">
+        <div class="item-header">
+          <span class="item-title">MERN-Authentication System</span>
+          <span class="item-date">MongoDB, Express, React, Node.js, JWT, Bcrypt</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Implemented JWT-based authentication featuring secure signup, login, and token validation functionality.</li>
+          <li>Used bcrypt for salted cryptographic password hashing and developed custom Express middleware for protected route security.</li>
+          <li>Synchronized client-side authentication states in React with protected routes and error feedback.</li>
+        </ul>
+      </div>
+
+      <!-- Notes App -->
+      <div class="resume-item">
+        <div class="item-header">
+          <span class="item-title">Full-Stack Notes Application</span>
+          <span class="item-date">React.js, Node.js, Express.js, MongoDB, Axios</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Built a full-stack Notes App with complete CRUD features to add, view, edit, delete, and search notes.</li>
+          <li>Designed a responsive, modular UI in React to display notes dynamically with real-time title search filtering.</li>
+          <li>Connected client-side interactions to a Node.js/Express REST API backed by MongoDB persistence.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section class="resume-section">
+      <h2 class="section-heading">Professional Experience</h2>
+      <div class="resume-item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Python Programming Intern</span> &mdash;
+            <span class="item-subtitle">Livewire Training Services Pvt, Ltd</span>
+          </div>
+          <span class="item-date">Jun 2023 – Jul 2023</span>
+        </div>
+        <div class="item-location">Tiruchengode, India</div>
+        <ul class="item-bullets">
+          <li>Completed intensive Python internship focusing on foundational programming, basic concepts, and data structures.</li>
+          <li>Covered comprehensive Python syntax, Object-Oriented Programming (OOP) paradigms, error handling, and modular scripting.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="resume-section">
+      <h2 class="section-heading">Education</h2>
+
+      <div class="resume-item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Master of Computer Applications (MCA)</span> &mdash;
+            <span class="item-subtitle">Bharathiar University</span>
+          </div>
+          <span class="item-date">July 2026 – July 2028</span>
+        </div>
+        <div class="item-location">Coimbatore, Tamil Nadu</div>
+      </div>
+
+      <div class="resume-item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Bachelor of Computer Science (B.Sc CS)</span> &mdash;
+            <span class="item-subtitle">Sengunthar Arts and Science College</span>
+          </div>
+          <span class="item-date">Oct 2021 – April 2024</span>
+        </div>
+        <div class="item-location">Namakkal, Tamil Nadu &bull; <strong>CGPA: 7.587 / 10</strong></div>
+      </div>
+    </section>
+
+    <!-- Certifications & Workshops -->
+    <section class="resume-section">
+      <h2 class="section-heading">Certifications &amp; Workshops</h2>
+
+      <div class="resume-item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">MERN Stack Development Certification (6 Months)</span> &mdash;
+            <span class="item-subtitle">Nucaza Innovations Pvt. Ltd.</span>
+          </div>
+        </div>
+        <p class="summary-text" style="font-size: 0.88rem; margin-top: 3px;">
+          Covered MongoDB, React, Node.js, and Express.js through hands-on full-stack development and projects.
+        </p>
+      </div>
+
+      <div class="resume-item" style="margin-top: 8px;">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Artificial Intelligence Workshop (1 Month)</span> &mdash;
+            <span class="item-subtitle">Novitech</span>
+          </div>
+        </div>
+        <p class="summary-text" style="font-size: 0.88rem; margin-top: 3px;">
+          Covered AI fundamentals, core algorithms, and real-world technology applications.
+        </p>
+      </div>
+
+      <div class="resume-item" style="margin-top: 8px;">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Python Programming Workshop</span> &mdash;
+            <span class="item-subtitle">Besant Technologies</span>
+          </div>
+        </div>
+        <p class="summary-text" style="font-size: 0.88rem; margin-top: 3px;">
+          Covered Python syntax, core data types, conditional loops, functions, and hands-on coding exercises.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
