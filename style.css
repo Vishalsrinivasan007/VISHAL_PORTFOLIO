@@ -1351,15 +1351,23 @@ button, input, textarea {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 36px;
   align-items: start;
+  width: 100%;
 }
 
 .contact-info-panel {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
+  min-width: 0;
+}
+
+.contact-form-panel {
+  width: 100%;
+  min-width: 0;
 }
 
 .info-card {
@@ -1371,6 +1379,9 @@ button, input, textarea {
   border-radius: var(--radius-lg);
   padding: 20px;
   transition: all var(--transition-fast);
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .info-card:hover {
@@ -1393,6 +1404,9 @@ button, input, textarea {
 .info-details {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
 }
 
 .info-label {
@@ -1408,6 +1422,9 @@ button, input, textarea {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-primary);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
 }
 
 .info-value:hover {
@@ -1418,6 +1435,8 @@ button, input, textarea {
   font-size: 0.78rem;
   color: var(--text-muted);
   margin-top: 3px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .copy-text-btn {
@@ -1429,6 +1448,7 @@ button, input, textarea {
   font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 3px;
+  width: fit-content;
 }
 
 .copy-text-btn:hover {
@@ -1442,6 +1462,9 @@ button, input, textarea {
   border-radius: var(--radius-xl);
   padding: 36px;
   backdrop-filter: blur(8px);
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .form-title {
@@ -1460,18 +1483,22 @@ button, input, textarea {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  width: 100%;
 }
 
 .form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 16px;
+  width: 100%;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  width: 100%;
+  min-width: 0;
 }
 
 .form-label {
@@ -1488,6 +1515,9 @@ button, input, textarea {
   color: var(--text-primary);
   font-size: 0.92rem;
   transition: all var(--transition-fast);
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .form-input:focus {
@@ -1817,11 +1847,20 @@ textarea.form-input {
   }
 
   .contact-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
   }
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
   .nav-links-wrapper {
     position: fixed;
     top: 76px;
@@ -1854,10 +1893,6 @@ textarea.form-input {
     display: flex;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
   .architecture-grid {
     grid-template-columns: 1fr;
   }
@@ -1877,6 +1912,93 @@ textarea.form-input {
 
   .nav-resume-btn {
     display: none;
+  }
+
+  /* Contact Section Mobile Specific Adjustments */
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .contact-info-panel,
+  .contact-form-panel {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .info-card {
+    padding: 16px;
+    gap: 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .info-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .info-value {
+    font-size: 0.92rem;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+  }
+
+  .form-wrapper {
+    padding: 24px 18px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: var(--radius-lg);
+  }
+
+  .form-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .info-card {
+    padding: 14px 14px;
+    gap: 12px;
+    border-radius: var(--radius-md);
+  }
+
+  .info-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .info-value {
+    font-size: 0.88rem;
+    word-break: break-all;
+  }
+
+  .form-wrapper {
+    padding: 20px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .form-title {
+    font-size: 1.25rem;
   }
 }
 
