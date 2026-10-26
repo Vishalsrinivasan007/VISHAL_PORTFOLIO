@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyButtons();
   initContactForm();
   updateFooterYear();
+  initScrollReveal();
+  initLazyLoading();
 });
 
 /* ==========================================================================
@@ -294,6 +296,90 @@ function updateFooterYear() {
   const yearElement = document.getElementById('currentYear');
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
+  }
+}
+
+/* ==========================================================================
+   9. Buttery Smooth Scroll Reveal Animations
+   ========================================================================== */
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll(
+    '.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale'
+  );
+
+  if (!revealElements.length) return;
+
+  // Graceful fallback for browsers without IntersectionObserver
+  if (!('IntersectionObserver' in window)) {
+    revealElements.forEach(el => el.classList.add('revealed'));
+    return;
+  }
+
+  // Auto-stagger children inside multi-card grids
+  const staggerContainers = [
+    { selector: '.hero-cards-grid', childSelector: '.stat-card', step: 0.1 },
+    { selector: '.skills-grid', childSelector: '.skill-card', step: 0.05 },
+    { selector: '.about-highlights-column', childSelector: '.feature-box', step: 0.09 },
+    { selector: '.credentials-grid', childSelector: '.credential-card', step: 0.1 }
+  ];
+
+  staggerContainers.forEach(({ selector, childSelector, step }) => {
+    const container = document.querySelector(selector);
+    if (!container) return;
+    const items = container.querySelectorAll(childSelector);
+    items.forEach((item, index) => {
+      if (!item.className.includes('stagger-')) {
+        item.style.transitionDelay = `${(index * step).toFixed(2)}s`;
+      }
+    });
+  });
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -45px 0px', // Triggers slightly before element comes fully into center
+    threshold: 0.12
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        // Unobserve to prevent redundant recalculations and keep 60fps scrolling
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  revealElements.forEach(el => {
+    revealObserver.observe(el);
+  });
+}
+
+/* ==========================================================================
+   10. Lazy Loading Optimization
+   ========================================================================== */
+function initLazyLoading() {
+  // Ensure native loading="lazy" is set on any images/media
+  const mediaElements = document.querySelectorAll('img:not([loading]), iframe:not([loading])');
+  mediaElements.forEach(media => {
+    media.setAttribute('loading', 'lazy');
+  });
+
+  // Support for data-src lazy images if added in the future
+  const lazyImages = document.querySelectorAll('img[data-src]');
+  if (lazyImages.length && 'IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.getAttribute('data-src');
+          img.removeAttribute('data-src');
+          observer.unobserve(img);
+        }
+      });
+    }, { rootMargin: '0px 0px 200px 0px' });
+
+    lazyImages.forEach(img => imageObserver.observe(img));
   }
 }
 
