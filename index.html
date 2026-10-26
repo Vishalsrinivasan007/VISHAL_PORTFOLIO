@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vishal Srinivasan - Full-Stack MERN & Python Developer Portfolio. Explore full-stack web applications, authentication systems, and modern software engineering projects.">
+  <meta name="keywords" content="Vishal Srinivasan, MERN Stack Developer, React, Node.js, Express, MongoDB, Python, Web Developer Portfolio, Full-Stack Developer">
+  <meta name="author" content="Vishal Srinivasan">
+  <title>Vishal Srinivasan | Full-Stack MERN & Python Developer</title>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="navbar-container">
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-monogram">VS</span>
+        <span class="brand-name">Vishal<span class="brand-dot">.</span></span>
+      </a>
+
+      <div class="nav-links-wrapper" id="navLinksWrapper">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle light and dark theme" title="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="resume.html" target="_blank" class="btn btn-outline btn-sm nav-resume-btn">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          <span>Resume</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="status-indicator"></span>
+            <span>Available for Full-Stack Opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Vishal Srinivasan</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            MERN Stack &amp; Python Developer
+          </p>
+
+          <p class="hero-description">
+            Computer Science graduate specializing in building robust full-stack applications with <strong>React</strong>, <strong>Node.js</strong>, <strong>Express</strong>, <strong>MongoDB</strong>, and <strong>Python</strong>. Focused on clean architecture, secure authentication, and sleek, responsive user interfaces.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore Projects</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Get In Touch</span>
+            </a>
+            <a href="resume.html" target="_blank" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>View Resume</span>
+            </a>
+          </div>
+
+          <!-- Quick Connect & Socials -->
+          <div class="hero-social-bar">
+            <span class="social-label">Connect:</span>
+            <div class="social-links">
+              <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub - Vishalsrinivasan007">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                <span>GitHub</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/vishal-srinivasan-78654326a" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+
+              <button class="social-link copy-btn" data-copy="rsvishalgeetha@gmail.com" title="Click to copy email">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>rsvishalgeetha@gmail.com</span>
+              </button>
+
+              <button class="social-link copy-btn" data-copy="+917708800758" title="Click to copy phone number">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>+91 7708800758</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Stats / Summary Cards -->
+        <div class="hero-cards-grid">
+          <div class="stat-card">
+            <div class="stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <div class="stat-number">MERN</div>
+              <div class="stat-title">Stack Core Focus</div>
+              <div class="stat-desc">MongoDB, Express, React &amp; Node.js</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <div class="stat-number">6+ Mos</div>
+              <div class="stat-title">Hands-on Full-Stack</div>
+              <div class="stat-desc">Certified by Nucaza Innovations</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <div class="stat-number">Secure</div>
+              <div class="stat-title">Auth &amp; Architecture</div>
+              <div class="stat-desc">JWT, Bcrypt, Protected Routes</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <div class="stat-number">Python</div>
+              <div class="stat-title">Foundation &amp; OOP</div>
+              <div class="stat-desc">Internship &amp; Scripting experience</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Profile Overview</span>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">Dedicated developer turning complex requirements into clean, performant web applications.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text-column">
+            <div class="rich-card highlight-border">
+              <h3 class="card-heading">Engineering Philosophy</h3>
+              <p class="text-secondary">
+                I am a motivated Computer Science graduate with strong fundamentals in <strong>MERN stack development</strong> and <strong>Python</strong>. My development journey centers around writing clean, maintainable code, architecting reliable RESTful APIs, and crafting intuitive user interfaces.
+              </p>
+              <p class="text-secondary">
+                During my 6-month hands-on MERN stack development program with <strong>Nucaza Innovations</strong>, I built full-stack applications from scratch—handling MongoDB schemas, Express middleware, secure JWT authentication with bcrypt, and component-driven React frontends.
+              </p>
+              <p class="text-secondary">
+                I am eager to contribute to a collaborative, high-performance engineering team, apply best practices, and continuously scale my technical abilities in a fast-paced environment.
+              </p>
+
+              <div class="card-chips">
+                <span class="chip">Clean Code</span>
+                <span class="chip">RESTful APIs</span>
+                <span class="chip">JWT Auth</span>
+                <span class="chip">State Management</span>
+                <span class="chip">Responsive UI</span>
+                <span class="chip">Version Control</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-highlights-column">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 7h-7"></path>
+                  <path d="M14 17H5"></path>
+                  <circle cx="17" cy="17" r="3"></circle>
+                  <circle cx="7" cy="7" r="3"></circle>
+                </svg>
+              </div>
+              <div class="feature-body">
+                <h4>Full-Stack Integration</h4>
+                <p>Bridging the frontend and backend smoothly with Axios, structured REST endpoints, and decoupled component architecture.</p>
+              </div>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <div class="feature-body">
+                <h4>Security-First Practices</h4>
+                <p>Implementation of cryptographic password hashing (bcrypt), token validation middleware, and protected API routes.</p>
+              </div>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <div class="feature-body">
+                <h4>Database Architecture</h4>
+                <p>Efficient MongoDB data models, schema validations with Mongoose, and reliable CRUD query optimization.</p>
+              </div>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="4 17 10 11 4 5"></polyline>
+                  <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+              </div>
+              <div class="feature-body">
+                <h4>Python &amp; Problem Solving</h4>
+                <p>Solid grasp of OOP, data structures, modular programming, and algorithmic fundamentals honed through internship training.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Technical Competencies</span>
+          <h2 class="section-title">Skills &amp; Technologies</h2>
+          <p class="section-subtitle">A balanced toolkit for developing modern, full-stack web products.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-pills-wrapper" role="tablist" aria-label="Skills Filter">
+          <button class="filter-pill active" data-filter="all" role="tab" aria-selected="true">All Skills</button>
+          <button class="filter-pill" data-filter="frontend" role="tab" aria-selected="false">Frontend</button>
+          <button class="filter-pill" data-filter="backend" role="tab" aria-selected="false">Backend &amp; Database</button>
+          <button class="filter-pill" data-filter="languages" role="tab" aria-selected="false">Languages</button>
+          <button class="filter-pill" data-filter="tools" role="tab" aria-selected="false">Tools &amp; DevOps</button>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
+          <!-- Skill Card: React.js -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="2"></circle>
+                <path d="M12 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9 9 9 0 0 0-9 9 9 9 0 0 0 9 9z" stroke-dasharray="2 3"></path>
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(30 12 12)"></ellipse>
+                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-30 12 12)"></ellipse>
+              </svg>
+            </div>
+            <div class="skill-details">
+              <div class="skill-head">
+                <h3 class="skill-name">React.js</h3>
+                <span class="skill-level-tag">Core Frontend</span>
+              </div>
+              <p class="skill-desc">Component-driven UI, hooks (`useState`, `useEffect`), props, conditional rendering, and dynamic state management.</p>
+            </div>
+          </div>
+
+          <!-- Skill Card: Node.js -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 22 8 22 16 12 22 2 16 2 8 12 2"></polygon>
+                <line x1="12" y1="22" x2="12" y2="12"></line>
+                <line x1="2" y1="8" x2="12" y2="12"></line>
+                <line x1="22" y1="8" x2="12" y2="12"></line>
+              </svg>
+            </div>
+            <div class="skill-details">
+              <div class="skill-head">
+                <h3 class="skill-name">Node.js</h3>
+                <span class="skill-level-tag">Backend Runtime</span>
+              </div>
+              <p class="skill-desc">Asynchronous event-driven server runtime, npm package management, and robust environment configuration.</p>
+            </div>
+          </div>
+
+          <!-- Skill Card: Express.js -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div class="skill-details">
+              <div class="skill-head">
+                <h3 class="skill-name">Express.js</h3>
+                <span class="skill-level-tag">REST Framework</span>
+              </div>
+              <p class="skill-desc">Building REST APIs, custom routing, error handling middleware, request validation, and CORS setup.</p>
+            </div>
+          </div>
+
+          <!-- Skill Card: MongoDB & Mongoose -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a9 9 0 0 0-9 9c0 6 9 11 9 11s9-5 9-11a9 9 0 0 0-9-9z"></path>
+                <circle cx="12" cy="11" r="3"></circle>
+              </svg>
+            </div>
+            <div class="skill-details">
+              <div class="skill-head">
+                <h3 class="skill-name">MongoDB</h3>
+                <span class="skill-level-tag">NoSQL Database</span>
+              </div>
+              <p class="skill-desc">Schema modeling with Mongoose, complex document queries, indexing, and persistent CRUD operations.</p>
+            </div>
+          </div>
+
+          <!-- Skill Card: JavaScript (ES6+) -->
+          <div class="skill-card" data-category="languages">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <path d="M9 16v-6"></path>
+                <path d="M15 16v-4a2 2 0 0 0-2-2h-1"></path>
+              </svg>
+            </div>
+            <div class="skill-details">
+              <div class="skill-head">
+                <h3 class="skill-name">JavaScript (ES6+)</h3>
+                <span class="skill-level-tag">Language</span>
+              </div>
+              <p class="skill-desc">Arrow functions, destructuring, Promises, `async/await`, array methods (`map`, `filter`, `reduce`), and DOM API.</p>
+            </div>
+          </div>
+
+          <!-- Skill Card: Python 3 -->
+          <div class="skill-card" data-category="languages">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+            </div>
+            <div class="skill-details">
+              <div class="skill-head">
+                <h3 class="skill-name">Python</h3>
+                <span class="skill-level-tag">Language</span>
+              </div>
+              <p class="skill-desc">Object-Oriented Programming (classes, inheritance), modular scripting, exception handling, and algorithms.</p>
+            </div>
+          </div>
+
+          <!-- Skill Card: JWT & Bcrypt Authentication -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+            </div>
+            <div class="skill-details">
+              <div class="skill-head">
+                <h3 class="skill-name">JWT &amp; Bcrypt Auth</h3>
+                <span class="skill-level-tag">Security</span>
+              </div>
+              <p class="skill-desc">Token generation, verification middleware, password salting/hashing, protected routes, and session integrity.</p>
+            </div>
+          </div>
+
+          <!-- Skill Card: Vite & Modern Tooling -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="skill-details">
+              <div class="skill-head">
+                <h3 class="skill-name">Vite &amp; Axios</h3>
+                <span class="skill-level-tag">Frontend Tooling</span>
+              </div>
+              <p class="skill-desc">Lightning-fast HMR build workflows, Axios HTTP interceptors, automated error handling, and API integration.</p>
+            </div>
+          </div>
+
+          <!-- Skill Card: HTML5 & CSS3 -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 3h16l-1.5 15.5L12 21l-6.5-2.5L4 3z"></path>
+                <path d="M12 6v12"></path>
+              </svg>
+            </div>
+            <div class="skill-details">
+              <div class="skill-head">
+                <h3 class="skill-name">HTML5 &amp; Modern CSS3</h3>
+                <span class="skill-level-tag">UI Styling</span>
+              </div>
+              <p class="skill-desc">Semantic markup, Flexbox, CSS Grid, media queries, CSS variables, accessible forms, and smooth responsive layouts.</p>
+            </div>
+          </div>
+
+          <!-- Skill Card: Git & GitHub -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="18" r="3"></circle>
+                <circle cx="6" cy="6" r="3"></circle>
+                <circle cx="6" cy="18" r="3"></circle>
+                <line x1="6" y1="9" x2="6" y2="15"></line>
+                <path d="M18 15v-1a5 5 0 0 0-5-5H6"></path>
+              </svg>
+            </div>
+            <div class="skill-details">
+              <div class="skill-head">
+                <h3 class="skill-name">Git &amp; GitHub</h3>
+                <span class="skill-level-tag">Version Control</span>
+              </div>
+              <p class="skill-desc">Branching workflows, commits, pull requests, resolving conflicts, and managing codebases across repositories.</p>
+            </div>
+          </div>
+
+          <!-- Skill Card: Postman & API Testing -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <div class="skill-details">
+              <div class="skill-head">
+                <h3 class="skill-name">Postman</h3>
+                <span class="skill-level-tag">API Testing</span>
+              </div>
+              <p class="skill-desc">Testing HTTP verbs (GET, POST, PUT, DELETE), inspecting JSON payloads, validating status codes, and managing auth tokens.</p>
+            </div>
+          </div>
+
+          <!-- Skill Card: VS Code & Dev Environment -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-icon-box">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <div class="skill-details">
+              <div class="skill-head">
+                <h3 class="skill-name">VS Code</h3>
+                <span class="skill-level-tag">Development IDE</span>
+              </div>
+              <p class="skill-desc">Efficient debugging, integrated terminal workflows, ESLint, Prettier, and productivity extensions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Featured Work</span>
+          <h2 class="section-title">Projects &amp; Architectures</h2>
+          <p class="section-subtitle">Real-world applications built with the MERN stack and clean coding principles.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: MERN-Authentication System -->
+          <article class="project-card highlight-card">
+            <div class="project-header">
+              <div class="project-type-tag">
+                <span class="badge badge-primary">Full-Stack MERN</span>
+                <span class="badge badge-success">Security &amp; Auth</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View Source Code on GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title">MERN-Authentication System</h3>
+            <p class="project-summary">
+              A secure, enterprise-grade authentication system built with Node.js, Express, MongoDB, and React. Implements standard industry authentication protocols with tokenized sessions.
+            </p>
+
+            <div class="project-features-list">
+              <div class="feature-bullet">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>JWT Implementation:</strong> Stateless JSON Web Token creation on verified user login and signup.</span>
+              </div>
+              <div class="feature-bullet">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Bcrypt Hashing:</strong> Multi-round salt hashing for password encryption prior to database persistence.</span>
+              </div>
+              <div class="feature-bullet">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Protected Middleware:</strong> Custom Express middleware verifying auth headers before granting route access.</span>
+              </div>
+              <div class="feature-bullet">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>React Auth State:</strong> Client-side route protection redirecting unauthenticated users cleanly.</span>
+              </div>
+            </div>
+
+            <div class="project-tags">
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Express.js</span>
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">JWT</span>
+              <span class="tech-tag">Bcrypt</span>
+              <span class="tech-tag">REST API</span>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn btn-outline btn-sm open-modal-btn" data-modal="auth-modal">
+                <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <span>View Architecture Details</span>
+              </button>
+              <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer" class="link-inline">
+                <span>GitHub Repository</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: Notes Application -->
+          <article class="project-card highlight-card">
+            <div class="project-header">
+              <div class="project-type-tag">
+                <span class="badge badge-primary">Full-Stack MERN</span>
+                <span class="badge badge-info">Productivity &amp; CRUD</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View Source Code on GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title">Full-Stack Notes Application</h3>
+            <p class="project-summary">
+              An interactive, responsive full-stack note-taking platform providing rapid note capture, editing, title search filtering, and categorized organization.
+            </p>
+
+            <div class="project-features-list">
+              <div class="feature-bullet">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Complete CRUD Pipeline:</strong> Create, Read, Update, and Delete notes with real-time UI synchronisation.</span>
+              </div>
+              <div class="feature-bullet">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Live Search &amp; Filter:</strong> Client-side instant query matching on title and note description.</span>
+              </div>
+              <div class="feature-bullet">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Responsive UI in React:</strong> Dynamic card layout, modal editors, and fluid grid supporting any viewport size.</span>
+              </div>
+              <div class="feature-bullet">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Backend Integration:</strong> Express REST endpoints connected with MongoDB Mongoose schema models.</span>
+              </div>
+            </div>
+
+            <div class="project-tags">
+              <span class="tech-tag">React.js</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express.js</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Axios</span>
+              <span class="tech-tag">CSS3</span>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn btn-outline btn-sm open-modal-btn" data-modal="notes-modal">
+                <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <span>View Architecture Details</span>
+              </button>
+              <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer" class="link-inline">
+                <span>GitHub Repository</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Python OOP & Data Processing Toolkit -->
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-type-tag">
+                <span class="badge badge-secondary">Python 3</span>
+                <span class="badge badge-warning">OOP &amp; Core Logic</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View Source Code on GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title">Python Core Logic &amp; OOP Modules</h3>
+            <p class="project-summary">
+              Modular Python applications implementing Object-Oriented Programming (OOP), custom exception handlers, algorithmic operations, and structured file manipulation.
+            </p>
+
+            <div class="project-features-list">
+              <div class="feature-bullet">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>OOP Architecture:</strong> Encapsulation, inheritance, and modular code organization across modules.</span>
+              </div>
+              <div class="feature-bullet">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Defensive Programming:</strong> Comprehensive `try-except` blocks handling edge cases gracefully.</span>
+              </div>
+            </div>
+
+            <div class="project-tags">
+              <span class="tech-tag">Python 3</span>
+              <span class="tech-tag">OOP</span>
+              <span class="tech-tag">Error Handling</span>
+              <span class="tech-tag">Data Structures</span>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer" class="link-inline">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: REST API Backend Service -->
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-type-tag">
+                <span class="badge badge-secondary">Node &amp; Express</span>
+                <span class="badge badge-info">REST API Architecture</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View Source Code on GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title">Scalable REST API Backend Services</h3>
+            <p class="project-summary">
+              Structured MVC pattern backend architecture featuring standard HTTP status codes, structured JSON responses, and verified with Postman test collections.
+            </p>
+
+            <div class="project-features-list">
+              <div class="feature-bullet">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>MVC Architecture:</strong> Distinct separation of Models, Controllers, and Routes for code scalability.</span>
+              </div>
+              <div class="feature-bullet">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Postman Verified:</strong> Full coverage testing of request payloads, headers, auth tokens, and error states.</span>
+              </div>
+            </div>
+
+            <div class="project-tags">
+              <span class="tech-tag">Express.js</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Postman</span>
+              <span class="tech-tag">MVC</span>
+            </div>
+
+            <div class="project-footer">
+              <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer" class="link-inline">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <div class="timeline-dual-grid">
+          <!-- Experience Column -->
+          <div class="timeline-column">
+            <div class="column-header">
+              <div class="column-icon-badge">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="section-tag">Career Journey</span>
+                <h2 class="column-title">Work Experience</h2>
+              </div>
+            </div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-card">
+                  <div class="timeline-header">
+                    <div>
+                      <h3 class="role-title">Python Programming Intern</h3>
+                      <div class="company-name">Livewire Training Services Pvt, Ltd</div>
+                    </div>
+                    <span class="timeline-date">Jun 2023 – Jul 2023</span>
+                  </div>
+                  <div class="location-tag">
+                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Tiruchengode, Tamil Nadu, India</span>
+                  </div>
+                  <ul class="timeline-points">
+                    <li>Completed an intensive compression Python internship focusing on core programming foundations and basic to advanced syntax.</li>
+                    <li>Gained in-depth hands-on experience with Object-Oriented Programming (OOP), classes, objects, and method abstraction.</li>
+                    <li>Developed robust error-handling mechanisms using custom exceptions and built modular multi-file Python applications.</li>
+                  </ul>
+                  <div class="timeline-techs">
+                    <span class="chip-sm">Python</span>
+                    <span class="chip-sm">OOP</span>
+                    <span class="chip-sm">Error Handling</span>
+                    <span class="chip-sm">Modules</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Column -->
+          <div class="timeline-column" id="education">
+            <div class="column-header">
+              <div class="column-icon-badge">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="section-tag">Academic Background</span>
+                <h2 class="column-title">Education</h2>
+              </div>
+            </div>
+
+            <div class="timeline">
+              <!-- Master Degree -->
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-card">
+                  <div class="timeline-header">
+                    <div>
+                      <h3 class="role-title">Master of Computer Applications (MCA)</h3>
+                      <div class="company-name">Bharathiar University</div>
+                    </div>
+                    <span class="timeline-date">July 2026 – July 2028</span>
+                  </div>
+                  <div class="location-tag">
+                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Coimbatore, Tamil Nadu</span>
+                  </div>
+                  <p class="timeline-desc">
+                    Advanced post-graduate studies covering distributed web architectures, enterprise application development, algorithm analysis, and software engineering methodologies.
+                  </p>
+                  <div class="timeline-techs">
+                    <span class="chip-sm">Computer Applications</span>
+                    <span class="chip-sm">Advanced Web Tech</span>
+                    <span class="chip-sm">Software Architecture</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bachelor Degree -->
+              <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-card">
+                  <div class="timeline-header">
+                    <div>
+                      <h3 class="role-title">Bachelor of Computer Science (B.Sc CS)</h3>
+                      <div class="company-name">Sengunthar Arts and Science College</div>
+                    </div>
+                    <span class="timeline-date">Oct 2021 – April 2024</span>
+                  </div>
+                  <div class="location-tag">
+                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Namakkal, Tamil Nadu</span>
+                  </div>
+                  <div class="grade-badge">
+                    <span>CGPA: <strong>7.587 / 10</strong></span>
+                  </div>
+                  <p class="timeline-desc">
+                    Comprehensive study of computer science fundamentals, data structures, relational database management systems, object-oriented concepts, and web development basics.
+                  </p>
+                  <div class="timeline-techs">
+                    <span class="chip-sm">Computer Science</span>
+                    <span class="chip-sm">Data Structures</span>
+                    <span class="chip-sm">RDBMS</span>
+                    <span class="chip-sm">Web Basics</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications & Workshops Section -->
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Continuous Learning</span>
+          <h2 class="section-title">Certifications &amp; Workshops</h2>
+          <p class="section-subtitle">Dedicated training programs that shaped my engineering foundation.</p>
+        </div>
+
+        <div class="credentials-grid">
+          <!-- Certification: Nucaza Innovations -->
+          <div class="credential-card highlight-credential">
+            <div class="credential-icon cert-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <div class="credential-body">
+              <span class="credential-badge">Professional Certification (6 Months)</span>
+              <h3 class="credential-title">MERN Stack Development</h3>
+              <div class="credential-issuer">Nucaza Innovations Pvt. Ltd.</div>
+              <p class="credential-desc">
+                Comprehensive 6-month hands-on full-stack training covering MongoDB, React, Node.js, and Express.js through project-driven development, building REST APIs, and modern frontend design.
+              </p>
+              <div class="credential-tags">
+                <span class="chip-sm">MongoDB</span>
+                <span class="chip-sm">Express.js</span>
+                <span class="chip-sm">React.js</span>
+                <span class="chip-sm">Node.js</span>
+                <span class="chip-sm">Full-Stack Projects</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Workshop: Novitech AI -->
+          <div class="credential-card">
+            <div class="credential-icon workshop-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                <path d="M2 12h20"></path>
+              </svg>
+            </div>
+            <div class="credential-body">
+              <span class="credential-badge badge-neutral">Technical Workshop (1 Month)</span>
+              <h3 class="credential-title">Artificial Intelligence Fundamentals</h3>
+              <div class="credential-issuer">Novitech</div>
+              <p class="credential-desc">
+                One-month intensive workshop exploring artificial intelligence principles, core algorithmic foundations, problem formulation, and real-world AI applications.
+              </p>
+              <div class="credential-tags">
+                <span class="chip-sm">AI Fundamentals</span>
+                <span class="chip-sm">Algorithms</span>
+                <span class="chip-sm">Applied Concepts</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Workshop: Besant Technologies Python -->
+          <div class="credential-card">
+            <div class="credential-icon workshop-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+            </div>
+            <div class="credential-body">
+              <span class="credential-badge badge-neutral">Hands-on Workshop</span>
+              <h3 class="credential-title">Python Programming</h3>
+              <div class="credential-issuer">Besant Technologies</div>
+              <p class="credential-desc">
+                Covered Python syntax, core data types, conditional loops, functions, data structures, and practical coding exercises emphasizing algorithmic clarity.
+              </p>
+              <div class="credential-tags">
+                <span class="chip-sm">Python Syntax</span>
+                <span class="chip-sm">Data Types</span>
+                <span class="chip-sm">Loops &amp; Functions</span>
+                <span class="chip-sm">Coding Exercises</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Let's Connect</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Have a question or looking to recruit a passionate MERN &amp; Python developer? Reach out anytime!</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Cards -->
+          <div class="contact-info-panel">
+            <div class="info-card">
+              <div class="info-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="info-details">
+                <div class="info-label">Direct Email</div>
+                <a href="mailto:rsvishalgeetha@gmail.com" class="info-value">rsvishalgeetha@gmail.com</a>
+                <button class="copy-text-btn" data-copy="rsvishalgeetha@gmail.com">Copy Email Address</button>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="info-details">
+                <div class="info-label">Phone &amp; WhatsApp</div>
+                <a href="tel:+917708800758" class="info-value">+91 7708800758</a>
+                <button class="copy-text-btn" data-copy="+917708800758">Copy Phone Number</button>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </div>
+              <div class="info-details">
+                <div class="info-label">LinkedIn Profile</div>
+                <a href="https://www.linkedin.com/in/r-s-vishal-srinivasan-78654326a" target="_blank" rel="noopener noreferrer" class="info-value">in/r-s-vishal-srinivasan</a>
+                <span class="info-hint">Connect for professional inquiries</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </div>
+              <div class="info-details">
+                <div class="info-label">GitHub Repositories</div>
+                <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer" class="info-value">github.com/Vishalsrinivasan007</a>
+                <span class="info-hint">Explore code samples &amp; projects</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Message Form -->
+          <div class="contact-form-panel">
+            <div class="form-wrapper">
+              <h3 class="form-title">Send a Direct Message</h3>
+              <p class="form-description">Have an opening or project discussion? Fill out the form and I will respond as soon as possible.</p>
+
+              <form id="contactForm" class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="senderName" class="form-label">Your Name</label>
+                    <input type="text" id="senderName" name="senderName" class="form-input" placeholder="e.g. Alex Taylor" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="senderEmail" class="form-label">Your Email</label>
+                    <input type="email" id="senderEmail" name="senderEmail" class="form-input" placeholder="alex@example.com" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="msgSubject" class="form-label">Subject</label>
+                  <input type="text" id="msgSubject" name="msgSubject" class="form-input" placeholder="Software Engineering Opportunity / Project Discussion" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="msgBody" class="form-label">Message</label>
+                  <textarea id="msgBody" name="msgBody" rows="5" class="form-input" placeholder="Hello Vishal, we reviewed your MERN stack profile and would like to talk..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                  <span>Send Message</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Clean, Non-overwhelming Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="brand-monogram">VS</span>
+        <div>
+          <span class="footer-title">Vishal Srinivasan</span>
+          <p class="footer-subtitle">Full-Stack MERN &amp; Python Developer</p>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#hero">Back to Top</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="resume.html" target="_blank">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-copyright">
+        &copy; <span id="currentYear">2026</span> Vishal Srinivasan. Designed with clean, modern code.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Detail Modals for In-Depth Architecture Inspection -->
+  <!-- Auth System Modal -->
+  <div class="modal" id="auth-modal" aria-hidden="true" role="dialog" aria-labelledby="authModalTitle">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge badge-primary">Technical Deep-Dive</span>
+            <h3 id="authModalTitle" class="modal-title">MERN Authentication System Architecture</h3>
+          </div>
+          <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-section">
+            <h4>Overview &amp; Design Rationale</h4>
+            <p>
+              This system serves as a scalable boilerplate and authentication foundation for production MERN web applications. It enforces state-of-the-art cryptographic safeguards to preserve user credentials and prevent unauthorized endpoint access.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h4>Key Architecture Highlights</h4>
+            <div class="architecture-grid">
+              <div class="arch-box">
+                <span class="arch-step">01. Signup &amp; Encryption</span>
+                <p>User submits credentials. Password is salted with 10 bcrypt salt rounds and hashed prior to MongoDB persistence.</p>
+              </div>
+              <div class="arch-box">
+                <span class="arch-step">02. Login &amp; Token Grant</span>
+                <p>Bcrypt comparison verifies credentials against database hash. Signed JWT is minted containing user payload &amp; expiry.</p>
+              </div>
+              <div class="arch-box">
+                <span class="arch-step">03. Route Protection</span>
+                <p>Express middleware intercepts incoming requests, verifies Bearer token validity via <code>jwt.verify</code>, and attaches authenticated user to <code>req.user</code>.</p>
+              </div>
+              <div class="arch-box">
+                <span class="arch-step">04. React Context Sync</span>
+                <p>Client application stores token in memory/HTTP-only cookies and synchronizes auth state across protected views.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <h4>API Endpoint Specifications</h4>
+            <div class="code-table-wrapper">
+              <table class="code-table">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Endpoint</th>
+                    <th>Access</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="badge badge-success">POST</span></td>
+                    <td><code>/api/auth/register</code></td>
+                    <td>Public</td>
+                    <td>Validates user data, hashes password, creates document</td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge badge-success">POST</span></td>
+                    <td><code>/api/auth/login</code></td>
+                    <td>Public</td>
+                    <td>Validates credentials, returns JWT token &amp; user profile</td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge badge-info">GET</span></td>
+                    <td><code>/api/auth/profile</code></td>
+                    <td>Protected</td>
+                    <td>Retrieves authenticated user profile via JWT Bearer header</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            <span>Explore on GitHub</span>
+          </a>
+          <button class="btn btn-ghost btn-sm modal-close-btn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notes App Modal -->
+  <div class="modal" id="notes-modal" aria-hidden="true" role="dialog" aria-labelledby="notesModalTitle">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge badge-info">Technical Deep-Dive</span>
+            <h3 id="notesModalTitle" class="modal-title">Full-Stack Notes Application Architecture</h3>
+          </div>
+          <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-section">
+            <h4>Overview &amp; Design Rationale</h4>
+            <p>
+              A responsive, reactive productivity suite that enables users to record, categorize, search, edit, and organize notes with instant UI response and reliable MongoDB database synchronization.
+            </p>
+          </div>
+
+          <div class="modal-section">
+            <h4>Key Technical Features</h4>
+            <div class="architecture-grid">
+              <div class="arch-box">
+                <span class="arch-step">01. Real-Time Search</span>
+                <p>Instant client-side filter querying both note titles and content with zero network overhead for active collections.</p>
+              </div>
+              <div class="arch-box">
+                <span class="arch-step">02. RESTful CRUD</span>
+                <p>Complete HTTP API supporting POST (create), GET (list), PUT (update), and DELETE operations with MongoDB validation.</p>
+              </div>
+              <div class="arch-box">
+                <span class="arch-step">03. Optimistic UI Updates</span>
+                <p>Immediate feedback when deleting or editing notes in React state, providing a desktop-app quality user experience.</p>
+              </div>
+              <div class="arch-box">
+                <span class="arch-step">04. Clean Mobile-First Grid</span>
+                <p>Adaptive CSS Grid layout ensuring comfortable readability across smartphones, tablets, and desktop displays.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <h4>Mongoose Schema Architecture</h4>
+            <pre class="code-snippet"><code>const NoteSchema = new mongoose.Schema({
+  title: { type: String, required: true, trim: true },
+  content: { type: String, required: true },
+  tags: [{ type: String, trim: true }],
+  isPinned: { type: Boolean, default: false }
+}, { timestamps: true });</code></pre>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            <span>Explore on GitHub</span>
+          </a>
+          <button class="btn btn-ghost btn-sm modal-close-btn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification for Copy/Actions -->
+  <div id="toast" class="toast" role="alert" aria-live="polite">
+    <div class="toast-icon">
+      <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <span id="toastMsg" class="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
