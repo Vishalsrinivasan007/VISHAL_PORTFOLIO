@@ -1363,6 +1363,7 @@ button, input, textarea {
   gap: 16px;
   width: 100%;
   min-width: 0;
+  font-style: normal;
 }
 
 .contact-form-panel {

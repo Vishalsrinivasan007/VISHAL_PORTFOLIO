@@ -145,6 +145,7 @@
       gap: 16px;
       font-size: 0.88rem;
       color: var(--text-muted);
+      font-style: normal;
     }
 
     .contact-meta a {
@@ -285,7 +286,7 @@
 </head>
 <body>
   <!-- Screen Navigation Bar -->
-  <div class="action-bar">
+  <nav class="action-bar" aria-label="Resume Actions">
     <a href="index.html" class="btn btn-outline">
       &larr; Back to Portfolio
     </a>
@@ -311,14 +312,14 @@
         Print
       </button>
     </div>
-  </div>
+  </nav>
 
   <!-- ATS-Friendly Executive Resume -->
   <main class="resume-document">
     <!-- Header -->
     <header class="resume-header">
       <h1 class="candidate-name">Vishal Srinivasan</h1>
-      <div class="contact-meta">
+      <address class="contact-meta">
         <span class="contact-item">
           <strong>Email:</strong>
           <a href="mailto:rsvishalgeetha@gmail.com">rsvishalgeetha@gmail.com</a>
@@ -335,7 +336,7 @@
           <strong>GitHub:</strong>
           <a href="https://github.com/Vishalsrinivasan007" target="_blank" rel="noopener noreferrer">github.com/Vishalsrinivasan007</a>
         </span>
-      </div>
+      </address>
     </header>
 
     <!-- Professional Summary -->
@@ -411,7 +412,7 @@
             <span class="item-title">Python Programming Intern</span> &mdash;
             <span class="item-subtitle">Livewire Training Services Pvt, Ltd</span>
           </div>
-          <span class="item-date">Jun 2023 – Jul 2023</span>
+          <span class="item-date"><time datetime="2023-06">Jun 2023</time> &ndash; <time datetime="2023-07">Jul 2023</time></span>
         </div>
         <div class="item-location">Tiruchengode, India</div>
         <ul class="item-bullets">
@@ -431,7 +432,7 @@
             <span class="item-title">Master of Computer Applications (MCA)</span> &mdash;
             <span class="item-subtitle">Bharathiar University</span>
           </div>
-          <span class="item-date">July 2026 – July 2028</span>
+          <span class="item-date"><time datetime="2026-07">July 2026</time> &ndash; <time datetime="2028-07">July 2028</time></span>
         </div>
         <div class="item-location">Coimbatore, Tamil Nadu</div>
       </div>
@@ -442,7 +443,7 @@
             <span class="item-title">Bachelor of Computer Science (B.Sc CS)</span> &mdash;
             <span class="item-subtitle">Sengunthar Arts and Science College</span>
           </div>
-          <span class="item-date">Oct 2021 – April 2024</span>
+          <span class="item-date"><time datetime="2021-10">Oct 2021</time> &ndash; <time datetime="2024-04">April 2024</time></span>
         </div>
         <div class="item-location">Namakkal, Tamil Nadu &bull; <strong>CGPA: 7.587 / 10</strong></div>
       </div>

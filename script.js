@@ -342,7 +342,11 @@ function initContactForm() {
 function updateFooterYear() {
   const yearElement = document.getElementById('currentYear');
   if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
+    const yr = new Date().getFullYear();
+    yearElement.textContent = yr;
+    if (yearElement.tagName.toLowerCase() === 'time') {
+      yearElement.setAttribute('datetime', yr);
+    }
   }
 }
 
