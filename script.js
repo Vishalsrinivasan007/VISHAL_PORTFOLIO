@@ -254,13 +254,16 @@ function showToast(message) {
 }
 
 /* ==========================================================================
-   7. Contact Form Handler (Direct Email Draft Helper)
+   7. Contact Form Handler (Direct Delivery to rsvishalgeetha@gmail.com)
    ========================================================================== */
 function initContactForm() {
   const contactForm = document.getElementById('contactForm');
   if (!contactForm) return;
 
-  contactForm.addEventListener('submit', (e) => {
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '<span>Send Message</span>';
+
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const name = document.getElementById('senderName').value.trim();
@@ -273,19 +276,61 @@ function initContactForm() {
       return;
     }
 
-    // Compose a mailto link
-    const mailtoUrl = `mailto:rsvishalgeetha@gmail.com?subject=${encodeURIComponent(
-      subject || `Portfolio Inquiry from ${name}`
-    )}&body=${encodeURIComponent(
-      `Hi Vishal,\n\n${message}\n\nFrom: ${name} (${email})`
-    )}`;
+    // Set sending loading state on button
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.85';
+      submitBtn.innerHTML = `
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" style="animation: spin 0.8s linear infinite;">
+          <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+          <path d="M12 2a10 10 0 0 1 10 10"></path>
+        </svg>
+        <span>Sending Message...</span>
+      `;
+    }
 
-    showToast('Opening your email client to send message...');
-    
-    // Open email client
-    window.location.href = mailtoUrl;
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/rsvishalgeetha@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          _subject: subject || `Portfolio Inquiry from ${name}`,
+          message: message,
+          _template: 'table'
+        })
+      });
 
-    contactForm.reset();
+      const result = await response.json();
+
+      if (response.ok && (result.success === 'true' || result.success === true)) {
+        showToast("Message sent! Delivered directly to Vishal's inbox.");
+        contactForm.reset();
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (err) {
+      // Fallback: If network blocks API (e.g. adblocker or offline), open mail client fallback
+      const mailtoUrl = `mailto:rsvishalgeetha@gmail.com?subject=${encodeURIComponent(
+        subject || `Portfolio Inquiry from ${name}`
+      )}&body=${encodeURIComponent(
+        `Hi Vishal,\n\n${message}\n\nFrom: ${name} (${email})`
+      )}`;
+
+      showToast('Opening email client as backup...');
+      window.location.href = mailtoUrl;
+      contactForm.reset();
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+    }
   });
 }
 
