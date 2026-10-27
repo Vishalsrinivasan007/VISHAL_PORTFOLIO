@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initLazyLoading();
   initInputAutoCapitalization();
+  initBackToTop();
 });
 
 /* ==========================================================================
@@ -480,5 +481,31 @@ function initInputAutoCapitalization() {
       return res;
     });
   }
+}
+
+/* ==========================================================================
+   12. Back To Top Button Behavior
+   ========================================================================== */
+function initBackToTop() {
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (!backToTopBtn) return;
+
+  function toggleBackToTop() {
+    if (window.pageYOffset > 380) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', toggleBackToTop, { passive: true });
+  toggleBackToTop();
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 }
 
