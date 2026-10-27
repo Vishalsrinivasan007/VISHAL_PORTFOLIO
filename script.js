@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateFooterYear();
   initScrollReveal();
   initLazyLoading();
+  initInputAutoCapitalization();
 });
 
 /* ==========================================================================
@@ -425,6 +426,59 @@ function initLazyLoading() {
     }, { rootMargin: '0px 0px 200px 0px' });
 
     lazyImages.forEach(img => imageObserver.observe(img));
+  }
+}
+
+/* ==========================================================================
+   11. Auto-capitalize First Letters on Input (Desktop & Mobile)
+   ========================================================================== */
+function initInputAutoCapitalization() {
+  const nameInput = document.getElementById('senderName');
+  const subjectInput = document.getElementById('msgSubject');
+  const messageInput = document.getElementById('msgBody');
+
+  // Helper to update input value while strictly maintaining caret / cursor position
+  function applyTransform(element, transformFn) {
+    element.addEventListener('input', () => {
+      const start = element.selectionStart;
+      const end = element.selectionEnd;
+      const current = element.value;
+      const transformed = transformFn(current);
+
+      if (current !== transformed) {
+        element.value = transformed;
+        element.setSelectionRange(start, end);
+      }
+    });
+  }
+
+  // Name: Capitalize first letter of each word (e.g. "alex taylor" -> "Alex Taylor")
+  if (nameInput) {
+    applyTransform(nameInput, (val) => {
+      return val.replace(/(^|\s)([a-z\u00E0-\u00FC])/g, (match, prefix, char) => prefix + char.toUpperCase());
+    });
+  }
+
+  // Subject: Capitalize first letter of the subject line
+  if (subjectInput) {
+    applyTransform(subjectInput, (val) => {
+      if (!val) return val;
+      return val.replace(/^(\s*)([a-z\u00E0-\u00FC])/, (m, p, c) => p + c.toUpperCase());
+    });
+  }
+
+  // Message: Capitalize first letter of sentences and new lines
+  if (messageInput) {
+    applyTransform(messageInput, (val) => {
+      if (!val) return val;
+      // Capitalize first non-whitespace character
+      let res = val.replace(/^(\s*)([a-z\u00E0-\u00FC])/, (m, p, c) => p + c.toUpperCase());
+      // Capitalize after sentence-ending punctuation (. ! ?) followed by space
+      res = res.replace(/([.!?]\s+)([a-z\u00E0-\u00FC])/g, (m, p, c) => p + c.toUpperCase());
+      // Capitalize after newlines
+      res = res.replace(/(\n\s*)([a-z\u00E0-\u00FC])/g, (m, p, c) => p + c.toUpperCase());
+      return res;
+    });
   }
 }
 

@@ -1130,22 +1130,22 @@
                 <div class="form-row">
                   <div class="form-group">
                     <label for="senderName" class="form-label">Your Name</label>
-                    <input type="text" id="senderName" name="senderName" class="form-input" placeholder="e.g. Alex Taylor" required>
+                    <input type="text" id="senderName" name="senderName" class="form-input" placeholder="e.g. Alex Taylor" autocapitalize="words" required>
                   </div>
                   <div class="form-group">
                     <label for="senderEmail" class="form-label">Your Email</label>
-                    <input type="email" id="senderEmail" name="senderEmail" class="form-input" placeholder="alex@example.com" required>
+                    <input type="email" id="senderEmail" name="senderEmail" class="form-input" placeholder="alex@example.com" autocapitalize="none" required>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="msgSubject" class="form-label">Subject</label>
-                  <input type="text" id="msgSubject" name="msgSubject" class="form-input" placeholder="Software Engineering Opportunity / Project Discussion" required>
+                  <input type="text" id="msgSubject" name="msgSubject" class="form-input" placeholder="Software Engineering Opportunity / Project Discussion" autocapitalize="sentences" required>
                 </div>
 
                 <div class="form-group">
                   <label for="msgBody" class="form-label">Message</label>
-                  <textarea id="msgBody" name="msgBody" rows="5" class="form-input" placeholder="Hello Vishal, we reviewed your MERN stack profile and would like to talk..." required></textarea>
+                  <textarea id="msgBody" name="msgBody" rows="5" class="form-input" placeholder="Hello Vishal, we reviewed your MERN stack profile and would like to talk..." autocapitalize="sentences" required></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block">
