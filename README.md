@@ -97,6 +97,6 @@ port-folio/
 - **Name:** Vishal Srinivasan
 - **Email:** [rsvishalgeetha@gmail.com](mailto:rsvishalgeetha@gmail.com)
 - **Phone:** +91 7708800758
-- **LinkedIn:** [linkedin.com/in/r-s-vishal-srinivasan-78654326a](https://www.linkedin.com/in/r-s-vishal-srinivasan-78654326a)
+- **LinkedIn:** [linkedin.com/in/vishal-srinivasan-78654326a](https://www.linkedin.com/in/r-s-vishal-srinivasan-78654326a)
 - **GitHub:** [github.com/Vishalsrinivasan007](https://github.com/Vishalsrinivasan007)
 
