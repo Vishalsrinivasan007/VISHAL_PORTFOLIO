@@ -1,16 +1,22 @@
-# Vishal Srinivasan - Developer Portfolio
+# Vishal Srinivasan - Developer Portfolio (React + Vite + TypeScript + Tailwind CSS)
 
-A clean, stylish, modern, and high-performance portfolio website built for **Vishal Srinivasan** (Full-Stack MERN & Python Developer). Designed with restrained, purposeful micro-interactions and zero chaotic animations for maximum readability and recruiter appeal.
+A clean, stylish, modern, and high-performance portfolio website built for **Vishal Srinivasan** (Full-Stack MERN & Python Developer). Built with **React 18**, **Vite**, **TypeScript**, and **Tailwind CSS** with restrained, purposeful micro-interactions and zero chaotic animations for maximum readability and recruiter appeal.
 
 ---
 
 ## ✨ Features & Highlights
 
+- **Modern Tech Stack**:
+  - **React 18** with TypeScript for strong typing and maintainable modular architecture.
+  - **Vite** for lightning-fast HMR and optimized production bundles.
+  - **Tailwind CSS** + Custom Design Tokens for responsive, utility-first styling.
+  - Pixel-perfect parity with the original portfolio design without any UI regressions or layout shifts.
+
 - **Aesthetic & Balanced UI/UX**:
   - Clean typography hierarchy featuring **Inter** and **JetBrains Mono**.
   - Modern glassmorphic elements (`backdrop-filter: blur(14px)`).
   - Subtle, restrained hover states (card lift, soft glow, clean border transition).
-  - Absolutely **no over-the-top, slow, or chaotic animations**—focuses on high-speed performance and professional presentation.
+  - High-speed 60fps GPU-accelerated scroll reveals.
 
 - **Dark & Light Mode**:
   - One-click theme switcher in the navigation bar.
@@ -37,46 +43,36 @@ A clean, stylish, modern, and high-performance portfolio website built for **Vis
     - Python Programming Workshop from Besant Technologies.
   - **Contact Section**:
     - Direct Email, Phone/WhatsApp, LinkedIn, and GitHub cards with one-click copy buttons.
-    - Interactive direct message form with client-side validation and automatic mail client integration.
-
-- **Dedicated Executive Resume Page (`resume.html`)**:
-  - Clean, ATS-friendly format.
-  - Ready for 1-click printing or saving as PDF (`Ctrl + P` / `Cmd + P`).
+    - Direct message form delivered to `rsvishalgeetha@gmail.com` with auto-capitalization and loading states.
+  - **ATS-Friendly Resume**:
+    - Viewable in interactive React modal or standalone `/resume.html`.
+    - Direct 1-click download of `Vishal_Srinivasan_Resume.pdf`.
 
 ---
 
 ## 🚀 How to Run Locally
 
-### Option 1: Direct in Browser (No setup required!)
-Simply double-click `index.html` or open it in any modern browser (Chrome, Edge, Firefox, Safari).
-
-### Option 2: Using Python Simple HTTP Server
-If you have Python installed, open terminal in this folder and run:
+### 1. Install Dependencies
 ```bash
-python -m http.server 3000
+npm install
 ```
-Then navigate to `http://localhost:3000`.
 
----
+### 2. Start Development Server
+```bash
+npm run dev
+```
+Navigate to `http://localhost:3000`.
 
-## 🌐 Free 1-Minute Deployment Guide
+### 3. Build for Production
+```bash
+npm run build
+```
+Creates an optimized, production-ready bundle in `dist/`.
 
-### Deploy on GitHub Pages:
-1. Create a repository on GitHub (e.g. `portfolio`).
-2. Push this folder's code to the `main` branch:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit of clean stylish portfolio"
-   git branch -M main
-   git remote add origin https://github.com/Vishalsrinivasan007/portfolio.git
-   git push -u origin main
-   ```
-3. In GitHub repo settings, go to **Pages** -> Source: `Deploy from a branch` -> Select `main` / `root` -> Click **Save**.
-4. Your site will be live at `https://Vishalsrinivasan007.github.io/portfolio/`.
-
-### Deploy on Vercel or Netlify:
-- Drag and drop this folder onto [Vercel](https://vercel.com) or [Netlify](https://www.netlify.com) for instant live HTTPS deployment.
+### 4. Preview Production Build
+```bash
+npm run preview
+```
 
 ---
 
@@ -84,11 +80,42 @@ Then navigate to `http://localhost:3000`.
 
 ```text
 port-folio/
-├── index.html       # Semantic HTML5 single-page portfolio
-├── style.css        # Clean CSS design system with Dark/Light mode variables
-├── script.js        # Responsive navigation, theme toggle, filters, modals, copy toast
-├── resume.html      # ATS-friendly, print-ready executive resume
-└── README.md        # Documentation and deployment instructions
+├── public/                     # Static assets served at root
+│   ├── favicon.svg             # VS Monogram vector icon
+│   ├── favicon.png             # 32x32 favicon
+│   ├── favicon.ico             # Classic icon
+│   ├── apple-touch-icon.png    # iOS web clip icon
+│   ├── resume.html             # Standalone ATS-friendly printable resume
+│   └── Vishal_Srinivasan_Resume.pdf # Original resume PDF download
+├── src/
+│   ├── components/             # Reusable UI components
+│   │   ├── Navbar.tsx          # Glassmorphic header with scrollspy & theme toggle
+│   │   ├── Hero.tsx            # Intro bio, actions, connect bar & stat cards
+│   │   ├── About.tsx           # Engineering philosophy & feature highlights
+│   │   ├── Skills.tsx          # Categorized skills grid with instant filter tabs
+│   │   ├── Projects.tsx        # Highlighted project cards with tech tags
+│   │   ├── ProjectModal.tsx    # Architecture deep-dive modal
+│   │   ├── Experience.tsx      # Work experience & education timelines
+│   │   ├── Certifications.tsx  # Certification & workshop credentials
+│   │   ├── Contact.tsx         # Direct contact details & auto-capitalizing form
+│   │   ├── Footer.tsx          # Brand links & dynamic semantic copyright
+│   │   ├── ResumeModal.tsx     # Embedded executive resume view & download
+│   │   ├── BackToTop.tsx       # Smooth floating scroll-to-top button
+│   │   └── Toast.tsx           # Toast alert notification
+│   ├── data/
+│   │   └── portfolioData.ts    # Centralized portfolio content & metadata
+│   ├── types/
+│   │   └── portfolio.ts        # TypeScript interfaces & types
+│   ├── App.tsx                 # Root application state & composition
+│   ├── main.tsx                # React DOM entry point
+│   └── index.css               # Tailwind CSS directives & custom design system
+├── index.html                  # Vite HTML entry point
+├── package.json                # Project dependencies & scripts
+├── postcss.config.js           # PostCSS configuration
+├── tailwind.config.js          # Tailwind CSS theme extension
+├── tsconfig.json               # TypeScript project configuration
+├── tsconfig.node.json          # TypeScript node tooling configuration
+└── vite.config.ts              # Vite bundler configuration
 ```
 
 ---
@@ -97,6 +124,5 @@ port-folio/
 - **Name:** Vishal Srinivasan
 - **Email:** [rsvishalgeetha@gmail.com](mailto:rsvishalgeetha@gmail.com)
 - **Phone:** +91 7708800758
-- **LinkedIn:** [linkedin.com/in/vishal-srinivasan-78654326a](https://www.linkedin.com/in/r-s-vishal-srinivasan-78654326a)
+- **LinkedIn:** [linkedin.com/in/r-s-vishal-srinivasan](https://www.linkedin.com/in/r-s-vishal-srinivasan-78654326a)
 - **GitHub:** [github.com/Vishalsrinivasan007](https://github.com/Vishalsrinivasan007)
-
