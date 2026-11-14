@@ -43,8 +43,8 @@ export const About: React.FC = () => {
             </div>
           </div>
 
-          <div className="about-highlights-column reveal-right">
-            <div className="feature-box">
+          <div className="about-highlights-column">
+            <div className="feature-box reveal-right" style={{ transitionDelay: '0.08s' }}>
               <div className="feature-icon">
                 <svg
                   viewBox="0 0 24 24"
@@ -68,7 +68,7 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="feature-box">
+            <div className="feature-box reveal-right" style={{ transitionDelay: '0.18s' }}>
               <div className="feature-icon">
                 <svg
                   viewBox="0 0 24 24"
@@ -90,7 +90,7 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="feature-box">
+            <div className="feature-box reveal-right" style={{ transitionDelay: '0.28s' }}>
               <div className="feature-icon">
                 <svg
                   viewBox="0 0 24 24"
@@ -113,7 +113,7 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="feature-box">
+            <div className="feature-box reveal-right" style={{ transitionDelay: '0.38s' }}>
               <div className="feature-icon">
                 <svg
                   viewBox="0 0 24 24"

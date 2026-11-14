@@ -156,16 +156,12 @@ export const App: React.FC = () => {
     };
   }, []);
 
-  // Scroll Reveal Animations
+  // Scroll Reveal Animations with dynamic observing
   useEffect(() => {
-    const revealElements = document.querySelectorAll(
-      '.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale'
-    );
-
-    if (!revealElements.length) return;
-
     if (!('IntersectionObserver' in window)) {
-      revealElements.forEach((el) => el.classList.add('revealed'));
+      document
+        .querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale')
+        .forEach((el) => el.classList.add('revealed'));
       return;
     }
 
@@ -180,14 +176,31 @@ export const App: React.FC = () => {
       },
       {
         root: null,
-        rootMargin: '0px 0px -45px 0px',
-        threshold: 0.12
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.1
       }
     );
 
-    revealElements.forEach((el) => observer.observe(el));
+    const observeUnrevealed = () => {
+      const elements = document.querySelectorAll(
+        '.reveal:not(.revealed), .reveal-up:not(.revealed), .reveal-left:not(.revealed), .reveal-right:not(.revealed), .reveal-scale:not(.revealed)'
+      );
+      elements.forEach((el) => observer.observe(el));
+    };
 
-    return () => observer.disconnect();
+    observeUnrevealed();
+
+    // Dynamically observe elements rendered later (e.g., filtered skill cards)
+    const mutationObserver = new MutationObserver(() => {
+      observeUnrevealed();
+    });
+
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      mutationObserver.disconnect();
+    };
   }, []);
 
   return (

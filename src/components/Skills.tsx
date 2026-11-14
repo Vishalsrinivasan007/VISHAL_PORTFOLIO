@@ -146,12 +146,12 @@ export const Skills: React.FC = () => {
         </div>
 
         <div className="skills-grid" id="skillsGrid">
-          {filteredSkills.map((skill) => (
+          {filteredSkills.map((skill, index) => (
             <div
               key={skill.id}
               className="skill-card reveal-up"
               data-category={skill.category}
-              style={{ display: 'flex', opacity: 1, transform: 'translateY(0)' }}
+              style={{ transitionDelay: `${(index * 0.05).toFixed(2)}s` }}
             >
               <div className="skill-icon-box">{renderSkillIcon(skill.id)}</div>
               <div className="skill-details">
