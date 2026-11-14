@@ -28,6 +28,23 @@ export const App: React.FC = () => {
 
   // Active Section for Navbar ScrollSpy
   const [activeSection, setActiveSection] = useState('hero');
+  const activeSectionRef = useRef('hero');
+  activeSectionRef.current = activeSection;
+
+  // Lock to avoid jitter during programmatic smooth scrolling when clicking a nav link
+  const clickLockTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isClickLockedRef = useRef(false);
+
+  const handleSelectSection = (id: string) => {
+    setActiveSection(id);
+    isClickLockedRef.current = true;
+    if (clickLockTimeoutRef.current) {
+      clearTimeout(clickLockTimeoutRef.current);
+    }
+    clickLockTimeoutRef.current = setTimeout(() => {
+      isClickLockedRef.current = false;
+    }, 850);
+  };
 
   // Toast Notification State
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -59,29 +76,67 @@ export const App: React.FC = () => {
     showToast(`Switched to ${newTheme} mode`);
   };
 
-  // ScrollSpy to highlight active navigation link
+  // ScrollSpy to highlight active navigation link accurately
   useEffect(() => {
-    const sectionIds = [
-      'hero',
-      'about',
-      'skills',
-      'projects',
-      'experience',
-      'education',
-      'certifications',
-      'contact'
-    ];
-
     const handleScroll = () => {
-      const scrollY = window.pageYOffset;
+      if (isClickLockedRef.current) return;
 
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const id = sectionIds[i];
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const isMobile = window.innerWidth <= 992;
+
+      // 1. If at the top of the page (Hero section), no nav link is active
+      const aboutEl = document.getElementById('about');
+      const aboutTop = aboutEl
+        ? aboutEl.getBoundingClientRect().top + scrollY
+        : 600;
+
+      if (scrollY < aboutTop - 180) {
+        if (activeSectionRef.current !== 'hero') {
+          setActiveSection('hero');
+        }
+        return;
+      }
+
+      // 2. If scrolled near the bottom of the page, Contact is active
+      const scrollHeight = document.documentElement.scrollHeight;
+      const clientHeight = window.innerHeight;
+      if (clientHeight + scrollY >= scrollHeight - 60) {
+        if (activeSectionRef.current !== 'contact') {
+          setActiveSection('contact');
+        }
+        return;
+      }
+
+      // 3. Sections to track in document order
+      // On mobile, experience and education are stacked vertically.
+      // On desktop, they are side-by-side columns within the dual timeline section.
+      const sectionsToTrack = isMobile
+        ? ['about', 'skills', 'projects', 'experience', 'education', 'certifications', 'contact']
+        : ['about', 'skills', 'projects', 'experience', 'certifications', 'contact'];
+
+      const navOffset = 180;
+
+      // Find active section by checking backwards from bottom to top
+      for (let i = sectionsToTrack.length - 1; i >= 0; i--) {
+        const id = sectionsToTrack[i];
         const el = document.getElementById(id);
         if (el) {
-          const top = el.offsetTop - 140;
-          if (scrollY >= top) {
-            setActiveSection(id);
+          const rect = el.getBoundingClientRect();
+          const elementAbsoluteTop = rect.top + scrollY;
+
+          if (scrollY >= elementAbsoluteTop - navOffset) {
+            // Special handling for desktop when user clicked education inside the experience section
+            if (!isMobile && id === 'experience' && activeSectionRef.current === 'education') {
+              const certEl = document.getElementById('certifications');
+              const certTop = certEl ? certEl.getBoundingClientRect().top + scrollY : Infinity;
+              if (scrollY < certTop - navOffset) {
+                return; // Maintain education as active
+              }
+            }
+
+            if (activeSectionRef.current !== id) {
+              setActiveSection(id);
+            }
             break;
           }
         }
@@ -89,9 +144,16 @@ export const App: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+      if (clickLockTimeoutRef.current) {
+        clearTimeout(clickLockTimeoutRef.current);
+      }
+    };
   }, []);
 
   // Scroll Reveal Animations
@@ -134,6 +196,7 @@ export const App: React.FC = () => {
         theme={theme}
         onToggleTheme={toggleTheme}
         activeSection={activeSection}
+        onSelectSection={handleSelectSection}
         onOpenResume={() => setIsResumeOpen(true)}
       />
 

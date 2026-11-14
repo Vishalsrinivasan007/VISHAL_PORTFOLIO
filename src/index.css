@@ -1356,6 +1356,10 @@ button, input, textarea {
   gap: 40px;
 }
 
+#education {
+  scroll-margin-top: 100px;
+}
+
 .column-header {
   display: flex;
   align-items: center;

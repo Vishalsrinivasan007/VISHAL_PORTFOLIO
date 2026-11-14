@@ -6,6 +6,7 @@ interface NavbarProps {
   onToggleTheme: () => void;
   activeSection: string;
   onOpenResume?: () => void;
+  onSelectSection?: (id: string) => void;
 }
 
 const NAV_ITEMS = [
@@ -22,7 +23,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   theme,
   onToggleTheme,
   activeSection,
-  onOpenResume
+  onOpenResume,
+  onSelectSection
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
@@ -38,8 +40,9 @@ export const Navbar: React.FC<NavbarProps> = ({
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
-  const handleLinkClick = (href: string) => {
+  const handleLinkClick = (href: string, id: string) => {
     setMobileMenuOpen(false);
+    onSelectSection?.(id);
     const targetElement = document.querySelector(href);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth' });
@@ -54,7 +57,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="nav-brand"
           onClick={(e) => {
             e.preventDefault();
-            handleLinkClick('#hero');
+            handleLinkClick('#hero', 'hero');
           }}
         >
           <span className="brand-monogram">VS</span>
@@ -74,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     className={`nav-link ${isActive ? 'active' : ''}`}
                     onClick={(e) => {
                       e.preventDefault();
-                      handleLinkClick(item.href);
+                      handleLinkClick(item.href, item.id);
                     }}
                   >
                     {item.label}
