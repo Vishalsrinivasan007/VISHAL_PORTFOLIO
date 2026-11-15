@@ -1,5 +1,6 @@
 import React from 'react';
 import { HERO_DATA } from '../data/portfolioData';
+import { TechOrbit } from './TechOrbit';
 
 interface HeroProps {
   onOpenResume?: () => void;
@@ -188,100 +189,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           </div>
         </div>
 
-        {/* Hero Stats / Summary Cards */}
-        <div className="hero-cards-grid">
-          <div className="stat-card reveal-right stagger-1">
-            <div className="stat-icon-wrapper">
-              <svg
-                viewBox="0 0 24 24"
-                width="22"
-                height="22"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                <polyline points="2 17 12 22 22 17" />
-                <polyline points="2 12 12 17 22 12" />
-              </svg>
-            </div>
-            <div className="stat-info">
-              <div className="stat-number">{HERO_DATA.stats[0].number}</div>
-              <div className="stat-title">{HERO_DATA.stats[0].title}</div>
-              <div className="stat-desc">{HERO_DATA.stats[0].desc}</div>
-            </div>
-          </div>
-
-          <div className="stat-card reveal-right stagger-2">
-            <div className="stat-icon-wrapper">
-              <svg
-                viewBox="0 0 24 24"
-                width="22"
-                height="22"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-              </svg>
-            </div>
-            <div className="stat-info">
-              <div className="stat-number">{HERO_DATA.stats[1].number}</div>
-              <div className="stat-title">{HERO_DATA.stats[1].title}</div>
-              <div className="stat-desc">{HERO_DATA.stats[1].desc}</div>
-            </div>
-          </div>
-
-          <div className="stat-card reveal-right stagger-3">
-            <div className="stat-icon-wrapper">
-              <svg
-                viewBox="0 0 24 24"
-                width="22"
-                height="22"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            </div>
-            <div className="stat-info">
-              <div className="stat-number">{HERO_DATA.stats[2].number}</div>
-              <div className="stat-title">{HERO_DATA.stats[2].title}</div>
-              <div className="stat-desc">{HERO_DATA.stats[2].desc}</div>
-            </div>
-          </div>
-
-          <div className="stat-card reveal-right stagger-4">
-            <div className="stat-icon-wrapper">
-              <svg
-                viewBox="0 0 24 24"
-                width="22"
-                height="22"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-            </div>
-            <div className="stat-info">
-              <div className="stat-number">{HERO_DATA.stats[3].number}</div>
-              <div className="stat-title">{HERO_DATA.stats[3].title}</div>
-              <div className="stat-desc">{HERO_DATA.stats[3].desc}</div>
-            </div>
-          </div>
-        </div>
+        {/* Interactive 3D Tech Orbit & Floating Halo (Option 4) */}
+        <TechOrbit />
       </div>
     </section>
   );
