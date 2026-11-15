@@ -6,6 +6,7 @@ import { About } from './components/About';
 import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { Experience } from './components/Experience';
+import { Education } from './components/Education';
 import { Certifications } from './components/Certifications';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -82,7 +83,6 @@ export const App: React.FC = () => {
       if (isClickLockedRef.current) return;
 
       const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-      const isMobile = window.innerWidth <= 992;
 
       // 1. If at the top of the page (Hero section), no nav link is active
       const aboutEl = document.getElementById('about');
@@ -107,12 +107,16 @@ export const App: React.FC = () => {
         return;
       }
 
-      // 3. Sections to track in document order
-      // On mobile, experience and education are stacked vertically.
-      // On desktop, they are side-by-side columns within the dual timeline section.
-      const sectionsToTrack = isMobile
-        ? ['about', 'skills', 'projects', 'experience', 'education', 'certifications', 'contact']
-        : ['about', 'skills', 'projects', 'experience', 'certifications', 'contact'];
+      // 3. Sections to track in document order (both desktop and mobile)
+      const sectionsToTrack = [
+        'about',
+        'skills',
+        'projects',
+        'experience',
+        'education',
+        'certifications',
+        'contact'
+      ];
 
       const navOffset = 180;
 
@@ -125,15 +129,6 @@ export const App: React.FC = () => {
           const elementAbsoluteTop = rect.top + scrollY;
 
           if (scrollY >= elementAbsoluteTop - navOffset) {
-            // Special handling for desktop when user clicked education inside the experience section
-            if (!isMobile && id === 'experience' && activeSectionRef.current === 'education') {
-              const certEl = document.getElementById('certifications');
-              const certTop = certEl ? certEl.getBoundingClientRect().top + scrollY : Infinity;
-              if (scrollY < certTop - navOffset) {
-                return; // Maintain education as active
-              }
-            }
-
             if (activeSectionRef.current !== id) {
               setActiveSection(id);
             }
@@ -219,6 +214,7 @@ export const App: React.FC = () => {
         <Skills />
         <Projects onOpenModal={(id) => setActiveModal(id)} />
         <Experience />
+        <Education />
         <Certifications />
         <Contact onShowToast={showToast} />
       </main>
